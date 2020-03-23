@@ -66,12 +66,12 @@
 </script>
 
 <svelte:head>
-  <title>Test framework7</title>
+  <title>Navigation</title>
 </svelte:head>
 
 <Page>
   <div slot="navbar">
-    <Nav title="Test framework7" />
+    <Nav title="Main screen" />
   </div>
   <div class="card card-outline">
     <div class="card-header">

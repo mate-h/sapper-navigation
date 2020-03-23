@@ -3,8 +3,7 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "sapper dev",
-    "build": "npx lessc ./src/global.less ./static/global.css && sapper build --legacy",
-    "build:global-styles": "npx lessc ./src/global.less ./static/global.css",
+    "build": "sapper build --legacy",
     "export": "sapper export --legacy",
     "start": "node __sapper__/build",
     "cy:run": "cypress run",
