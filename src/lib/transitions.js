@@ -1,5 +1,5 @@
 import { cubicOut } from "svelte/easing";
-import { standard } from "../util/bezier";
+import { fastOutSlowIn } from "./interpolators";
 import { headerOffset } from '../stores/page';
 import { get } from 'svelte/store';
 
@@ -29,7 +29,7 @@ export const stack = (node, { x = 100 }) => {
   const transform = style.transform === 'none' ? '' : style.transform;
   return {
     duration: long,
-    easing: standard,
+    easing: fastOutSlowIn,
     css: (t, u) => `transform: ${transform} translate3d(${u * x}%, 0, 0);`
   };
 };
@@ -101,7 +101,7 @@ export function shift({ fallback, ...defaults }) {
 
 export const crossfade = shift({
   duration: long,
-  easing: standard,
+  easing: fastOutSlowIn,
   fallback(node, params) {
     const style = getComputedStyle(node);
     const transform = style.transform === 'none' ? '' : style.transform;
@@ -109,7 +109,7 @@ export const crossfade = shift({
     const opacity = +style.opacity;
     return {
       duration: long,
-      easing: standard,
+      easing: fastOutSlowIn,
       css: (t, u) => `
         opacity: ${t * opacity};
         transform: ${transform} translate(${u * dx}px, 0);

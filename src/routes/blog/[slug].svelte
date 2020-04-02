@@ -14,7 +14,7 @@
 </script>
 
 <script>
-	import Nav from "../../components/nav.svelte";
+	import { f7 as Navbar } from "../../components/navbar";
 	import Page from "../../components/page.svelte";
 	export let post;
 </script>
@@ -53,7 +53,7 @@
 
 <Page>
 	<div slot="navbar">
-    <Nav title="Post" key="post-page" backLink="blog" backKey="blog-page" />
+    <Navbar title="Post" key="post-page" backLink="blog" backKey="blog-page" />
   </div>
 	<div class="block">
 		<h1 class="headline4">{post.title}</h1>

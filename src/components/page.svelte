@@ -32,7 +32,7 @@
 </style>
 
 <script>
-  import { lateral, length, stack } from '../styles/page-transition';
+  import { lateral, length, stack } from '../lib/transitions';
   import { fly, fade } from 'svelte/transition';
   import { current, isBack, isLateral } from '../stores/page';
 

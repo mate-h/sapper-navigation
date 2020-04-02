@@ -102,7 +102,3 @@ export function bezier (mX1, mY1, mX2, mY2) {
     return calcBezier(getTForX(x), mY1, mY2);
   };
 };
-
-export const ease = bezier(.25,.1,.25,1);
-
-export const standard = bezier(0.4, 0.0, 0.2, 1);

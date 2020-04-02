@@ -10,7 +10,7 @@
 
 <script>
   import { current, isBack } from '../../stores/page';
-  import Nav from '../../components/nav.svelte';
+  import { f7 as Navbar } from '../../components/navbar';
   import Page from '../../components/page.svelte';
 
   export let posts;
@@ -26,7 +26,7 @@
 
 <Page>
   <div slot="navbar">
-    <Nav title="Recent posts" key="blog-page" />
+    <Navbar title="Recent posts" key="blog-page" />
   </div>
   <div class="list">
     <ul>

@@ -5,12 +5,15 @@
   :global(.row > :first-child) {
     margin-right: var(--f7-card-footer-padding-horizontal);
   }
+  :global(.narrow) {
+    width: auto;
+  }
 </style>
 
 <script>
   import { onMount } from 'svelte';
   import { openDialog } from '../components/dialog-queue.svelte';
-  import Nav from '../components/nav.svelte';
+  import { f7 as Navbar } from '../components/navbar';
   import Page from '../components/page.svelte';
   const themes = [
     {
@@ -38,7 +41,7 @@
     } catch (e) {}
   }
 
-  import Button from '../components/button.svelte';
+  import { f7 as Button} from '../components/button';
   import Dialog from '../components/dialog.svelte';
 
   const handleClick = () => {
@@ -63,7 +66,7 @@
 
 <Page>
   <div slot="navbar">
-    <Nav title="Main screen" />
+    <Navbar title="Main screen" />
   </div>
   <div class="card card-outline">
     <div class="card-header">
@@ -101,7 +104,7 @@
       and footers for additional information or just for custom actions.
     </div>
     <div class="card-footer row">
-      <Button fill on:click="{handleClick}">Svelte dialog</Button>
+      <Button class="narrow" fill on:click="{handleClick}">Svelte dialog</Button>
     </div>
   </div>
 </Page>

@@ -27,7 +27,7 @@
   import { onMount } from 'svelte';
   import { fade } from 'svelte/transition';
   import { quintOut } from 'svelte/easing';
-  import { active } from './active';
+  import { active } from '../lib/actions/active';
 
   let mounted = false;
   onMount(() => {

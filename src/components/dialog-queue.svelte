@@ -21,7 +21,6 @@
   import { fade } from 'svelte/transition';
   import { onMount } from 'svelte';
   import { writable } from 'svelte/store';
-  import { standard } from '../util/bezier';
 </script>
 
 {#if $dialogs[0]}

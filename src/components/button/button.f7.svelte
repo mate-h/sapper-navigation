@@ -10,11 +10,13 @@
 </style>
 
 <script>
-  import { active } from './active';
+  import { active } from '../../lib/actions/active';
   export let round = false;
   export let outline = false;
   export let raised = false;
   export let fill = false;
+  let className;
+  export { className as class };
 </script>
 
 <button
@@ -25,7 +27,7 @@
   class:button-round="{round}"
   class:button-outline="{outline}"
   class:button-raised="{raised}"
-  class="button"
+  class={`button ${className}`}
   on:click
 >
   <slot />

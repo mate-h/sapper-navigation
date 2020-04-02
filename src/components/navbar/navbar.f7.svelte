@@ -32,8 +32,8 @@
 </style>
 
 <script>
-  import { length, crossfade } from '../styles/page-transition';
-  import { isLateral } from '../stores/page';
+  import { length, crossfade } from '../../lib/transitions';
+  import { isLateral } from '../../stores/page';
   import { fade } from 'svelte/transition';
   let send, receive;
   $: {
