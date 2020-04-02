@@ -27,7 +27,7 @@
   import { onMount } from 'svelte';
   import { fade } from 'svelte/transition';
   import { quintOut } from 'svelte/easing';
-  import Tappable from './tappable.svelte';
+  import { active } from './active';
 
   let mounted = false;
   onMount(() => {
@@ -64,7 +64,6 @@
     };
   }
   export let onClose = () => {};
-  let active;
 </script>
 
 <!-- ESC or ENTER on keyboard also dispatches onClose -->
@@ -83,10 +82,8 @@
     </div>
   </div>
   <div class="dialog-buttons">
-    <Tappable let:active={active}>
-      <span class:active-state={active} class="dialog-button dialog-button-bold button" on:click="{onClose}">
-        OK
-      </span>
-    </Tappable>
+    <span use:active class="dialog-button dialog-button-bold button" on:click="{onClose}">
+      OK
+    </span>
   </div>
 </div>

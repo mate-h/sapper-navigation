@@ -8,7 +8,6 @@
 </style>
 
 <script>
-  // import { app } from '../stores.js';
   import { onMount } from 'svelte';
   import { openDialog } from '../components/dialog-queue.svelte';
   import Nav from '../components/nav.svelte';
@@ -34,6 +33,8 @@
       const cl = document.documentElement.classList;
       ['md', 'ios', 'aurora'].forEach(s => cl.remove(s));
       cl.add(selectedTheme);
+      if (selectedTheme === 'ios') cl.add('ios-translucent-bars', 'ios-translucent-modals');
+      else cl.remove('ios-translucent-bars', 'ios-translucent-modals');
     } catch (e) {}
   }
 
@@ -50,15 +51,6 @@
         },
       },
     });
-  };
-  const handleClickF7 = () => {
-    app.dialog.alert(
-      'Your current location cannot be determined at this time.',
-      'Current location not available',
-      () => {
-        console.log('Hello world callback');
-      }
-    );
   };
   const refreshTheme = () => {
     setTimeout(() => location.reload(true), 10);
@@ -110,7 +102,6 @@
     </div>
     <div class="card-footer row">
       <Button fill on:click="{handleClick}">Svelte dialog</Button>
-      <Button fill on:click="{handleClickF7}">F7 dialog</Button>
     </div>
   </div>
 </Page>

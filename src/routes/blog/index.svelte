@@ -48,24 +48,6 @@
           </a>
         </li>
       {/each}
-      <li>
-        <!-- Additional "smart-select" class -->
-        <a href="#" class="item-link smart-select">
-          <!-- select -->
-          <select name="fruits">
-            <option value="apple" selected>Apple</option>
-            <option value="pineapple">Pineapple</option>
-          </select>
-          <div class="item-content">
-            <div class="item-inner">
-              <!-- Select label -->
-              <div class="item-title body2">Fruit</div>
-              <!-- Selected value, not required -->
-              <div class="item-after body2">Apple</div>
-            </div>
-          </div>
-        </a>
-      </li>
     </ul>
   </div>
 </Page>

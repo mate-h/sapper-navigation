@@ -10,26 +10,23 @@
 </style>
 
 <script>
-  import Tappable from './tappable.svelte';
+  import { active } from './active';
   export let round = false;
   export let outline = false;
   export let raised = false;
   export let fill = false;
-  export let active = false;
 </script>
 
-<Tappable let:active={activeState}>
-  <button
-    style
-    class:active-state="{activeState}"
-    class:button-active="{active}"
-    class:button-fill="{fill}"
-    class:button-round="{round}"
-    class:button-outline="{outline}"
-    class:button-raised="{raised}"
-    class="button"
-    on:click
-  >
-    <slot />
-  </button>
-</Tappable>
+<button
+  use:active
+  style
+  class:button-active="{active}"
+  class:button-fill="{fill}"
+  class:button-round="{round}"
+  class:button-outline="{outline}"
+  class:button-raised="{raised}"
+  class="button"
+  on:click
+>
+  <slot />
+</button>
